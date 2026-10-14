@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VKİ Hesaplayıcı | Abdullah Tanrıverdi</title>
+    <link rel="stylesheet" href="../css/style.css?v=1.1">
+    <style>
+        /* Sadece bu sayfaya özel basit eklemeler */
+        .calc-box { text-align: center; padding: 20px; }
+        .calc-box input { width: 150px; text-align: center; }
+        #vki-sonuc { margin-top: 20px; font-weight: bold; color: #2980b9; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>VKİ Hesaplama Aracı</h1>
+        <p><a href="../index.html" style="color: white; text-decoration: none;">← Ana Sayfaya Dön</a></p>
+    </header>
+
+    <div class="container">
+        <section class="calc-box">
+            <h2>Vücut Kitle İndeksini Hesapla</h2>
+            <input type="number" id="kilo" placeholder="Kilo (kg)" required>
+            <input type="number" id="boy" placeholder="Boy (cm)" required>
+            <br><br>
+            <input type="submit" value="Hesapla" onclick="vkiHesapla()">
+            
+            <div id="vki-sonuc"></div>
+        </section>
+    </div>
+
+    <script>
+        function vkiHesapla() {
+            let kilo = document.getElementById('kilo').value;
+            let boy = document.getElementById('boy').value / 100;
+            if(kilo > 0 && boy > 0) {
+                let vki = (kilo / (boy * boy)).toFixed(2);
+                let durum = "";
+                if(vki < 18.5) durum = "Zayıf";
+                else if(vki < 25) durum = "Normal";
+                else if(vki < 30) durum = "Fazla Kilolu";
+                else durum = "Obez";
+                
+                document.getElementById('vki-sonuc').innerHTML = "VKİ: " + vki + "<br>Durum: " + durum;
+            } else {
+                alert("Lütfen geçerli değerler giriniz!");
+            }
+        }
+    </script>
+
+    <footer>
+        <p>&copy; 2026 Abdullah Tanrıverdi</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,172 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+nav {
+    text-align: center;
+    margin-top: 10px;
+}
+
+nav a {
+    margin: 0 15px;
+    color: #2980b9;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    padding: 40px;
+    max-width: 900px;
+    margin: auto;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+h2 {
+    color: #2c3e50;
+    border-bottom: 2px solid #2980b9;
+    padding-bottom: 10px;
+}
+
+ul {
+    list-style: square;
+    padding-left: 20px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #1f6391;
+}
+
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 30px;
+}
+
+/* ---------- Mobil Uyum için Media Query ---------- */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 10px;
+    }
+
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    input[type="submit"] {
+        width: 100%;
+    }
+}
+/* ---------- Projelerim Bölümü (Ana Sayfa İçin) ---------- */
+.projects-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.project-card {
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 280px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: #2980b9; /* Senin ana teman olan mavi */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.project-card h3 {
+    color: #2c3e50; /* Senin başlık rengin */
+    margin-top: 0;
+}
+
+.project-card p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.project-btn {
+    display: inline-block;
+    background-color: #2980b9; /* Senin buton rengin */
+    color: white !important; /* Mavi link rengini ezmek için */
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.project-btn:hover {
+    background-color: #1f6391;
+    text-decoration: none; /* Alt çizgiyi kaldırır */
+}
+
+/* ---------- Mobil Uyum ---------- */
+@media (max-width: 768px) {
+    .project-card {
+        width: 100%;
+    }
+}
